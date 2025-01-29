@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:background="@color/black">
+
+    <!-- Contenedor principal con borde verde -->
+    <RelativeLayout
+        android:id="@+id/contenedorReproductor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:background="@drawable/green_border"
+        android:padding="16dp">
+
+        <!-- Título de la canción -->
+        <TextView
+            android:id="@+id/tituloCancion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="Título de la canción"
+            android:textColor="@color/green"
+            android:textSize="20sp" />
+
+        <!-- Imagen de la carátula -->
+        <ImageView
+            android:id="@+id/imagenCaratula"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_below="@id/tituloCancion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="60dp"
+            android:scaleType="centerCrop" />
+
+        <!-- Barra de Progreso Horizontal -->
+        <ProgressBar
+            android:id="@+id/barraProgreso"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imagenCaratula"
+            android:layout_marginTop="16dp"
+            android:indeterminateOnly="false"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="@color/green" />
+
+        <!-- Contenedor de los botones -->
+        <LinearLayout
+            android:id="@+id/contenedorBotones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/barraProgreso"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <!-- Botón Reiniciar -->
+            <ImageButton
+                android:id="@+id/botonReiniciar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:contentDescription="Reiniciar Canción"
+                android:src="@drawable/ic_replay"
+                app:tint="@color/green" />
+
+            <!-- Botón Play -->
+            <ImageButton
+                android:id="@+id/botonPlay"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@null"
+                android:contentDescription="Reproducir"
+                android:src="@drawable/ic_play"
+                app:tint="@color/green" />
+
+            <!-- Botón Pausar -->
+            <ImageButton
+                android:id="@+id/botonPausar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:background="@null"
+                android:contentDescription="Pausar"
+                android:src="@drawable/ic_pause"
+                app:tint="@color/green" />
+
+            <!-- Botón Subir Volumen -->
+            <ImageButton
+                android:id="@+id/botonSubirVolumen"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:background="@null"
+                android:contentDescription="Subir Volumen"
+                android:src="@drawable/ic_subirvolumen"
+                app:tint="@color/green" />
+
+            <!-- Botón Bajar Volumen -->
+            <ImageButton
+                android:id="@+id/botonBajarVolumen"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:contentDescription="Bajar Volumen"
+                android:src="@drawable/ic_bajarvolumen"
+                app:tint="@color/green" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Botón Volver centrado abajo -->
+    <Button
+        android:id="@+id/botonVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/red"
+        android:text="Volver"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</RelativeLayout>
